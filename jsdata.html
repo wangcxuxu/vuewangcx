@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    #box {
+      width: 500px;
+      height: 350px;
+    }
+    .ul {
+      width: 100%;
+      height: 50px;
+      display: flex;
+      flex-wrap: wrap;
+      /* background: sandybrown; */
+      text-align: center;
+    }
+    li {
+      flex: 120px;
+      height: 60px;
+      /* border: 1px solid red; */
+      line-height: 60px;
+      font-size: 25px;
+      font-weight: 600;
+      margin: 8px;
+      background: cornflowerblue;
+    }
+    .li {
+      color: crimson;
+      background: darkcyan;
+    }
+  </style>
+  <body>
+    <div id="box">
+      <ul class="ul">
+        <li class="li"><strong>1</strong>JAN</li>
+        <li><strong>2</strong> FER</li>
+        <li><strong>3</strong>MAR</li>
+        <li><strong>4</strong>APR</li>
+        <li><strong>5</strong>MAY</li>
+        <li><strong>6</strong>JUN</li>
+        <li><strong>7</strong>JUL</li>
+        <li><strong>8</strong>AUG</li>
+        <li><strong>9</strong>SEP</li>
+        <li><strong>10</strong>OCT</li>
+        <li><strong>11</strong>NOV</li>
+        <li><strong>12</strong>DEC</li>
+      </ul>
+    </div>
+    <div id="msg">
+      <h2>
+        <strong>1</strong>
+        月节日
+      </h2>
+      <p>元旦 : 1月1日至3日放假3天</p>
+    </div>
+  </body>
+  <script>
+    window.onload = function () {
+      var oli = document.getElementById("box").getElementsByTagName("li");
+      var omsg = document.getElementById("msg");
+      var op = omsg.getElementsByTagName("p")[0];
+      var strong = omsg.getElementsByTagName("strong")[0];
+      var array = [
+        "元旦 : 1月1日至3日放假3天",
+        "春节 : 2月2日至8日放假7天",
+        "妇女节 : 3月8日 与我无关",
+        "清明节 : 4月3日至5日放假3天",
+        "劳动节 : 4月30日至5月2日 放假3天",
+        "端午节 : 6月4日至6日放假3天",
+        "小暑 : 7月7日放假个屁",
+        "七夕节 : 8月6日与我无关",
+        "中秋节 : 9月10日至12日放假3天",
+        "国庆节 : 10月1日至7日放假7天",
+        "立冬 : 11月8日不放假",
+        "艾滋病日 : 12月1日",
+      ];
+
+      for (var i = 0; i < oli.length; i++) {
+        oli[i].index = i;
+        oli[i].onmouseover = function () {
+          for (var n = 0; n < oli.length; n++) oli[n].className = "";
+          this.className = "li";
+          op.innerHTML = array[this.index];
+          strong.innerHTML = this.index + 1;
+        };
+      }
+    };
+  </script>
+</html>

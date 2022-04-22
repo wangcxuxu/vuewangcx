@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    #top {
+      width: 500px;
+      height: 500px;
+      margin: 0 auto;
+      /* display: none; */
+      text-align: center;
+    }
+    #tc {
+      width: 500px;
+      height: 500px;
+      background: #63626273;
+      margin: 0 auto;
+      line-height: 300px;
+      text-align: center;
+      display: none;
+    }
+  </style>
+  <body>
+    <div id="top">
+      <button id="add" onclick="add">弹出层</button>
+    </div>
+    <div id="tc">
+      <button id="abb" onclick="abb">关闭</button>
+    </div>
+  </body>
+  <script>
+    window.onload = function () {
+      var win = document.getElementById("top");
+      var tc = document.getElementById("tc");
+      var onadd = document.getElementById("add");
+      var onabb = document.getElementById("abb");
+      onadd.onclick = function(){
+        //   console.log(1);
+        tc.style.display = 'block'
+        win.style.display = 'none'
+      }
+      onabb.onclick = function(){
+        //   console.log(1);
+        tc.style.display = 'none'
+        win.style.display = 'block'
+      }
+    };
+  </script>
+</html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    850
+</body>
+</html>
